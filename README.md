@@ -15,3 +15,31 @@ Specifically, we propose a fully Bayesian dynamic state-space model framework fo
 
 ## Video Tutorial
 A video tutorial providing an overview of the general concepts underlying the code [can be found here.](https://www.youtube.com/watch?v=wAGD3Qq6n_w)
+
+## Usage
+```matlab
+Usage:
+    estimate_wake_prob() [GENERATES EXAMPLE DATA AND RUNS DEMO]
+    parameter_estimates=estimate_wake_prob(Fs, data, num_particles, ploton, prog_bar)
+ 
+    Input:
+        Fs: sampling frequency (in Hz)
+        data: 5xT matrix of simutaneously observed data, with rows:
+               1. Behavioral response (1=correct, 0=incorrect, NaN=missing at that time point)
+               2. Squeeze amplitude (in mV)
+               3. Alpha power (in dB)
+               4. Delta power (in dB)
+               5. Theta power (in dB)
+            All rows are sampled at Fs, with missing data represented by NaN.
+            A missing observation type is represented by a complete row of NaN values.
+        num_particles: Number of particles to use (Default: 5000)
+        ploton: 1 = Plot output graph, 0 = No output plot (Default: 1);
+        progbar: 1 = Display progress bar, 0 = No progress bar (Default: 1);
+ 
+    Output:
+        estimates: A structure with the 2.5, 50, and 97.5 percentiles of Pr(Wake), observation, and state estimates
+ 
+    Example:
+        %Runs demo and saves example data to workspace
+        parameter_estimates=estimate_wake_prob();
+```
