@@ -8,3 +8,5 @@
 </p>
 <br/><br/>
 
+## Video Tutorial
+A video tutorial providing an overview of the general concepts underlying the code [can be found here.](https://www.youtube.com/watch?v=wAGD3Qq6n_w)
