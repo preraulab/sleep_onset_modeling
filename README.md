@@ -18,28 +18,36 @@ A video tutorial providing an overview of the general concepts underlying the co
 
 ## Usage
 ```matlab
-Usage:
-    estimate_wake_prob() [GENERATES EXAMPLE DATA AND RUNS DEMO]
-    parameter_estimates=estimate_wake_prob(Fs, data, num_particles, ploton, prog_bar)
- 
-    Input:
-        Fs: sampling frequency (in Hz)
-        data: 5xT matrix of simutaneously observed data, with rows:
-               1. Behavioral response (1=correct, 0=incorrect, NaN=missing at that time point)
-               2. Squeeze amplitude (in mV)
-               3. Alpha power (in dB)
-               4. Delta power (in dB)
-               5. Theta power (in dB)
-            All rows are sampled at Fs, with missing data represented by NaN.
-            A missing observation type is represented by a complete row of NaN values.
-        num_particles: Number of particles to use (Default: 5000)
-        ploton: 1 = Plot output graph, 0 = No output plot (Default: 1);
-        progbar: 1 = Display progress bar, 0 = No progress bar (Default: 1);
- 
-    Output:
-        estimates: A structure with the 2.5, 50, and 97.5 percentiles of Pr(Wake), observation, and state estimates
- 
-    Example:
-        %Runs demo and saves example data to workspace
-        parameter_estimates=estimate_wake_prob();
+%ESTIMATE_WAKE_PROB Estimates wake probability from behavioral and physiological data
+%
+%   This code implements the Baysian framework, empirical wake probability model, and particle filter
+%   described in Prerau et. al 2014, PLOS Computational Biology. Using behavioral (binary responses)
+%   and physiological (EMG and EEG) data, we can estimate the instantanous probability that a subject
+%   is awake, which is equivalent in this model to the instantanous probability of response.
+%
+%   Usage:
+%   estimate_wake_prob() [GENERATES EXAMPLE DATA AND RUNS DEMO]
+%   parameter_estimates=estimate_wake_prob(Fs, data, num_particles, ploton, prog_bar)
+%
+%   Input:
+%       Fs: sampling frequency (in Hz)
+%       data: 5xT matrix of simutaneously observed data, with rows:
+%              1. Behavioral response (1=correct, 0=incorrect, NaN=missing at that time point)
+%              2. Squeeze amplitude (in mV)
+%              3. Alpha power (in dB)
+%              4. Delta power (in dB)
+%              5. Theta power (in dB)
+%           All rows are sampled at Fs, with missing data represented by NaN.
+%           A missing observation type is represented by a complete row of NaN values.
+%       num_particles: Number of particles to use (Default: 5000)
+%       ploton: 1 = Plot output graph, 0 = No output plot (Default: 1);
+%       progbar: 1 = Display progress bar, 0 = No progress bar (Default: 1);
+%
+%   Output:
+%       estimates: A structure with the 2.5, 50, and 97.5 percentiles of Pr(Wake), observation, and state estimates
+```
+## Example
+```matlab
+%Runs demo and saves example data to workspace
+parameter_estimates=estimate_wake_prob();
 ```
