@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "sleep_onset_modeling"
+abstract: "MATLAB toolbox implementing the Bayesian state-space particle-filter model for tracking the sleep onset process (SOP), companion to Prerau et al., PLOS Comp Biol 2014."
+authors:
+  - family-names: Prerau
+    given-names: Michael J.
+    name-suffix: Ph.D.
+    affiliation: "Prerau Laboratory, Brigham and Women's Hospital, Harvard Medical School"
+    orcid: "https://orcid.org/0000-0002-9010-5273"
+  - family-names: Purdon
+    given-names: Patrick L.
+    orcid: "https://orcid.org/0000-0003-0080-3340"
+type: software
+license: BSD-3-Clause
+url: "https://github.com/preraulab/sleep_onset_modeling"
+repository-code: "https://github.com/preraulab/sleep_onset_modeling"
+preferred-citation:
+  type: article
+  title: "Tracking the sleep onset process: an empirical model of behavioral and physiological dynamics"
+  authors:
+    - family-names: Prerau
+      given-names: Michael J.
+      orcid: "https://orcid.org/0000-0002-9010-5273"
+    - family-names: Hartnack
+      given-names: Katie E.
+    - family-names: Obregon-Henao
+      given-names: Gabriel
+    - family-names: Sampson
+      given-names: Aaron
+    - family-names: Merlino
+      given-names: Margaret
+    - family-names: Gannon
+      given-names: Karen
+    - family-names: Bianchi
+      given-names: Matt T.
+    - family-names: Ellenbogen
+      given-names: Jeffrey M.
+    - family-names: Purdon
+      given-names: Patrick L.
+      orcid: "https://orcid.org/0000-0003-0080-3340"
+  journal: "PLOS Computational Biology"
+  year: 2014
+  volume: 10
+  issue: 10
+  start: e1003866
+  doi: "10.1371/journal.pcbi.1003866"
